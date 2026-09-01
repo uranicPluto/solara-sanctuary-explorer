@@ -1,0 +1,218 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * SOLARA design system.
+ * Palette: warm ivory, sand, stone, deep forest green, ocean blue, charcoal,
+ * warm bronze, champagne. All colors in oklch. Never hardcode colors in JSX.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 12px);
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-sand: var(--sand);
+  --color-stone: var(--stone);
+  --color-ivory: var(--ivory);
+  --color-forest: var(--forest);
+  --color-ocean: var(--ocean);
+  --color-charcoal: var(--charcoal);
+  --color-bronze: var(--bronze);
+  --color-champagne: var(--champagne);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.125rem;
+
+  --ivory: oklch(0.972 0.009 88);
+  --sand: oklch(0.919 0.019 84);
+  --stone: oklch(0.836 0.012 76);
+  --forest: oklch(0.335 0.045 155);
+  --ocean: oklch(0.436 0.062 232);
+  --charcoal: oklch(0.246 0.012 60);
+  --bronze: oklch(0.606 0.086 62);
+  --champagne: oklch(0.886 0.043 84);
+
+  --background: var(--ivory);
+  --foreground: var(--charcoal);
+  --card: oklch(0.988 0.005 88);
+  --card-foreground: var(--charcoal);
+  --popover: oklch(0.988 0.005 88);
+  --popover-foreground: var(--charcoal);
+  --primary: var(--forest);
+  --primary-foreground: oklch(0.978 0.008 88);
+  --secondary: var(--sand);
+  --secondary-foreground: var(--charcoal);
+  --muted: oklch(0.944 0.012 84);
+  --muted-foreground: oklch(0.512 0.016 66);
+  --accent: var(--bronze);
+  --accent-foreground: oklch(0.982 0.007 88);
+  --destructive: oklch(0.512 0.152 27);
+  --destructive-foreground: oklch(0.982 0.007 88);
+  --border: oklch(0.884 0.012 80);
+  --input: oklch(0.884 0.012 80);
+  --ring: var(--bronze);
+
+  --chart-1: oklch(0.335 0.045 155);
+  --chart-2: oklch(0.606 0.086 62);
+  --chart-3: oklch(0.436 0.062 232);
+  --chart-4: oklch(0.836 0.012 76);
+  --chart-5: oklch(0.246 0.012 60);
+
+  --sidebar: oklch(0.955 0.011 85);
+  --sidebar-foreground: var(--charcoal);
+  --sidebar-primary: var(--forest);
+  --sidebar-primary-foreground: oklch(0.978 0.008 88);
+  --sidebar-accent: oklch(0.925 0.015 84);
+  --sidebar-accent-foreground: var(--charcoal);
+  --sidebar-border: oklch(0.884 0.012 80);
+  --sidebar-ring: var(--bronze);
+}
+
+.dark {
+  --background: oklch(0.19 0.012 60);
+  --foreground: oklch(0.955 0.011 85);
+  --card: oklch(0.238 0.013 62);
+  --card-foreground: oklch(0.955 0.011 85);
+  --popover: oklch(0.238 0.013 62);
+  --popover-foreground: oklch(0.955 0.011 85);
+  --primary: oklch(0.72 0.058 155);
+  --primary-foreground: oklch(0.19 0.012 60);
+  --secondary: oklch(0.288 0.014 64);
+  --secondary-foreground: oklch(0.955 0.011 85);
+  --muted: oklch(0.288 0.014 64);
+  --muted-foreground: oklch(0.735 0.014 74);
+  --accent: oklch(0.688 0.084 64);
+  --accent-foreground: oklch(0.19 0.012 60);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.688 0.084 64);
+  --sidebar: oklch(0.219 0.012 60);
+  --sidebar-foreground: oklch(0.955 0.011 85);
+  --sidebar-accent: oklch(0.288 0.014 64);
+  --sidebar-accent-foreground: oklch(0.955 0.011 85);
+  --sidebar-border: oklch(1 0 0 / 12%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 1.08;
+  }
+
+  ::selection {
+    background: var(--color-champagne);
+    color: var(--color-charcoal);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-bronze);
+    outline-offset: 3px;
+  }
+}
+
+@utility display {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+@utility rule-line {
+  height: 1px;
+  width: 100%;
+  background: color-mix(in oklab, var(--color-foreground) 14%, transparent);
+}
+
+@utility hide-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
