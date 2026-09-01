@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime-BkSabwWG.js";var t=e(),n=()=>(0,t.jsx)(`div`,{className:`flex min-h-screen items-center justify-center`,children:(0,t.jsx)(`p`,{className:`display text-4xl`,children:`This villa is no longer on the island.`})});export{n as notFoundComponent};
